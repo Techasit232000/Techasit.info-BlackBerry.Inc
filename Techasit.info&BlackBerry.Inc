@@ -107,3 +107,4 @@ git add .
 git commit -m "Initial commit for Techasit.info & BlackBerry.Inc"
 git remote add origin https://github.com/YOUR_USERNAME/techasit-blackberry.git
 git push -u origin master
+https://www.tnnthailand.com/live/
