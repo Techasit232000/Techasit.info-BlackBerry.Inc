@@ -1,0 +1,23 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\wetay> INSERT INTO device_logs (device_id, log_level, message)
+At line:1 char:35
++ INSERT INTO device_logs (device_id, log_level, message)
++                                   ~
+Missing argument in parameter list.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingArgument
+
+PS C:\Users\wetay> VALUES ('bbx-001', 'INFO', 'Device initialized successfully');
+VALUES : The term 'VALUES' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ VALUES ('bbx-001', 'INFO', 'Device initialized successfully');
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (VALUES:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\wetay>
