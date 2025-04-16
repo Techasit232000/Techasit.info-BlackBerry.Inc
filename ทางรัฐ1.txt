@@ -1,0 +1,65 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\wetay> from flask import Flask
+At line:1 char:1
++ from flask import Flask
++ ~~~~
+The 'from' keyword is not supported in this version of the language.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ReservedKeywordNotAllowed
+
+PS C:\Users\wetay> from config import DevelopmentConfig, ProductionConfig, TestingConfig
+At line:1 char:1
++ from config import DevelopmentConfig, ProductionConfig, TestingConfig
++ ~~~~
+The 'from' keyword is not supported in this version of the language.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ReservedKeywordNotAllowed
+
+PS C:\Users\wetay>
+PS C:\Users\wetay> def create_app(config_class=DevelopmentConfig):
+config_class=DevelopmentConfig : The term 'config_class=DevelopmentConfig' is not recognized as the name of a cmdlet,
+function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the
+path is correct and try again.
+At line:1 char:16
++ def create_app(config_class=DevelopmentConfig):
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (config_class=DevelopmentConfig:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\wetay>     app = Flask(__name__)
+__name__ : The term '__name__' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:17
++     app = Flask(__name__)
++                 ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (__name__:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\wetay>     app.config.from_object(config_class)
+config_class : The term 'config_class' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:28
++     app.config.from_object(config_class)
++                            ~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (config_class:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\wetay>
+PS C:\Users\wetay>     # Import and register blueprints/routes here if needed
+PS C:\Users\wetay>     # from .routes import main
+PS C:\Users\wetay>     # app.register_blueprint(main)
+PS C:\Users\wetay>
+PS C:\Users\wetay>     return app
+app : The term 'app' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:12
++     return app
++            ~~~
+    + CategoryInfo          : ObjectNotFound: (app:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\wetay>
