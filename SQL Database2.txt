@@ -1,0 +1,132 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\wetay> import sqlite3
+import : The term 'import' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ import sqlite3
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (import:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\wetay> import os
+import : The term 'import' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ import os
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (import:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\wetay>
+PS C:\Users\wetay> # Database file path
+PS C:\Users\wetay> DB_PATH = os.path.join(os.path.dirname(__file__), "blackberry_data.db")
+__file__ : The term '__file__' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:40
++ DB_PATH = os.path.join(os.path.dirname(__file__), "blackberry_data.db ...
++                                        ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (__file__:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\wetay>
+PS C:\Users\wetay> def create_connection():
+At line:1 char:23
++ def create_connection():
++                       ~
+An expression was expected after '('.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpectedExpression
+
+PS C:\Users\wetay>     return sqlite3.connect(DB_PATH)
+DB_PATH : The term 'DB_PATH' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:28
++     return sqlite3.connect(DB_PATH)
++                            ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (DB_PATH:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\wetay>
+PS C:\Users\wetay> def create_tables():
+At line:1 char:19
++ def create_tables():
++                   ~
+An expression was expected after '('.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpectedExpression
+
+PS C:\Users\wetay>     with create_connection() as conn:
+At line:1 char:28
++     with create_connection() as conn:
++                            ~
+An expression was expected after '('.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpectedExpression
+
+PS C:\Users\wetay>         cursor = conn.cursor()
+At line:1 char:30
++         cursor = conn.cursor()
++                              ~
+An expression was expected after '('.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpectedExpression
+
+PS C:\Users\wetay>         # Example table for IoT device logs
+PS C:\Users\wetay>         cursor.execute("""
+>>         CREATE TABLE IF NOT EXISTS device_logs (
+>>             id INTEGER PRIMARY KEY AUTOINCREMENT,
+>>             device_id TEXT NOT NULL,
+>>             timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+>>             log_level TEXT,
+>>             message TEXT
+>>         );
+>>         """)
+cursor.execute : The term 'cursor.execute' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:9
++         cursor.execute("""
++         ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (cursor.execute:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\wetay>         conn.commit()
+At line:1 char:21
++         conn.commit()
++                     ~
+An expression was expected after '('.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpectedExpression
+
+PS C:\Users\wetay>
+PS C:\Users\wetay> if __name__ == "__main__":
+At line:1 char:3
++ if __name__ == "__main__":
++   ~
+Missing '(' after 'if' in if statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingOpenParenthesisInIfStatement
+
+PS C:\Users\wetay>     create_tables()
+At line:1 char:19
++     create_tables()
++                   ~
+An expression was expected after '('.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpectedExpression
+
+PS C:\Users\wetay>     print(f"Database created at {DB_PATH}")
+fDatabase created at {DB_PATH} : The term 'fDatabase created at {DB_PATH}' is not recognized as the name of a cmdlet,
+function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the
+path is correct and try again.
+At line:1 char:11
++     print(f"Database created at {DB_PATH}")
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (fDatabase created at {DB_PATH}:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\wetay>
