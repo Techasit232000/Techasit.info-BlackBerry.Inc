@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BlackBerry Enterprise Integration | Techasit.info</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2em;
+      background: #f4f4f4;
+      color: #222;
+    }
+    header {
+      background: #000;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+    }
+    h1, h2 {
+      color: #111;
+    }
+    section {
+      margin: 2em 0;
+    }
+    button {
+      background: #111;
+      color: #fff;
+      border: none;
+      padding: 0.6em 1em;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #333;
+    }
+    .log {
+      background: #eee;
+      padding: 1em;
+      margin-top: 1em;
+      font-family: monospace;
+      white-space: pre-wrap;
+      border-radius: 5px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 3em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Techasit x BlackBerry Enterprise</h1>
+    <p>Simulating Secure Infrastructure with UEM & Cylance AI</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Device Integrity Check (UEM Simulation)</h2>
+      <button onclick="simulateUEM()">Run UEM Check</button>
+      <div id="uem-log" class="log"></div>
+    </section>
+
+    <section>
+      <h2>AI Threat Detection (Cylance Simulation)</h2>
+      <button onclick="simulateCylance()">Run Cylance AI</button>
+      <div id="cylance-log" class="log"></div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Techasit Luanthon — Simulated Integration for Public Education
+  </footer>
+
+  <script>
+    function simulateUEM() {
+      const devices = ['Drone-001', 'Robot-Alpha', 'Sensor-Gateway'];
+      const log = devices.map(device => `${device}: ✅ Secure & Verified`);
+      document.getElementById("uem-log").innerText = log.join('\n');
+    }
+
+    function simulateCylance() {
+      const threats = [
+        { id: 'T100', type: 'Trojan', status: 'Blocked' },
+        { id: 'T101', type: 'Exploit', status: 'Prevented' },
+        { id: 'T102', type: 'Malware', status: 'Neutralized' }
+      ];
+      const log = threats.map(t => `[${t.id}] ${t.type}: 🛡 ${t.status}`);
+      document.getElementById("cylance-log").innerText = log.join('\n');
+    }
+  </script>
+</body>
+</html>
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {}
+}
