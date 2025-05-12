@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Techasit.info | Future with BlackBerry Inc.</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header, footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 1.2em 0;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1em;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 2em;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 3em;
+    }
+    h1, h2 {
+      color: #222;
+    }
+    ul {
+      padding-left: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Techasit Luanthon</h1>
+    <p>Cybersecurity | AI | IoT | Politics</p>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#blackberry">BlackBerry</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2>Welcome to Techasit.info</h2>
+      <p>This is the official website of Techasit Luanthon. Dedicated to national innovation through technology, political development, and cyber defense.</p>
+    </section>
+
+    <section id="blackberry">
+      <h2>Techasit x BlackBerry Inc.</h2>
+      <p>We explore secure technologies and AI systems developed by BlackBerry Inc. for use in robotics, smart cities, and sovereign digital infrastructure.</p>
+
+      <h3>Key Technologies</h3>
+      <ul>
+        <li><strong>Cylance AI:</strong> AI-based threat prevention</li>
+        <li><strong>QNX:</strong> Real-time OS for embedded, mission-critical systems</li>
+        <li><strong>UEM:</strong> Secure unified endpoint management for enterprises</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Techasit Luanthon</p>
+  </footer>
+</body>
+</html>
