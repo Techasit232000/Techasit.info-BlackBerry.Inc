@@ -1,0 +1,27 @@
+Python 3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from flask import Flask, render_template
+Traceback (most recent call last):
+  File "<python-input-0>", line 1, in <module>
+    from flask import Flask, render_template
+ModuleNotFoundError: No module named 'flask'
+>>>
+>>> app = Flask(Techasit.info)
+Traceback (most recent call last):
+  File "<python-input-2>", line 1, in <module>
+    app = Flask(Techasit.info)
+          ^^^^^
+NameError: name 'Flask' is not defined
+>>>
+>>> @app.route('/')
+... def home():
+...         return render_template('index.html', title='Techasit.info', content='Welcome to Techasit.info!')
+...
+Traceback (most recent call last):
+  File "<python-input-4>", line 1, in <module>
+    @app.route('/')
+     ^^^
+NameError: name 'app' is not defined
+>>> if __name__ == '__main__':
+...             app.run(debug=True)
+...

@@ -1,0 +1,128 @@
+Python 3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> pip install pycryptodome
+  File "<python-input-0>", line 1
+    pip install pycryptodome
+        ^^^^^^^
+SyntaxError: invalid syntax
+>>> from Crypto.Cipher import AES
+Traceback (most recent call last):
+  File "<python-input-1>", line 1, in <module>
+    from Crypto.Cipher import AES
+ModuleNotFoundError: No module named 'Crypto'
+>>> from Crypto.Util.Padding import pad, unpad
+Traceback (most recent call last):
+  File "<python-input-2>", line 1, in <module>
+    from Crypto.Util.Padding import pad, unpad
+ModuleNotFoundError: No module named 'Crypto'
+>>> from Crypto.Random import get_random_bytes
+Traceback (most recent call last):
+  File "<python-input-3>", line 1, in <module>
+    from Crypto.Random import get_random_bytes
+ModuleNotFoundError: No module named 'Crypto'
+>>> import base64
+>>>
+>>> class AES256Encryptor:
+...         def __init__(self, key: bytes):
+...                         """ กำหนดคีย์สำหรับการเข้ารหัส ต้องมีขนาด 32 bytes (256-bit) """
+...                                 if len(key) != 32:
+...                                                     raise ValueError("Key ต้องมีขนาด 32 bytes (256-bit)")
+...                                                             self.key = key
+...
+  File "<python-input-6>", line 4
+    if len(key) != 32:
+IndentationError: unexpected indent
+>>>     def encrypt(self, plaintext: str) -> str:
+  File "<python-input-7>", line 1
+    def encrypt(self, plaintext: str) -> str:
+IndentationError: unexpected indent
+>>>         """ เข้ารหัสข้อความด้วย AES-256 CBC """
+  File "<python-input-8>", line 1
+    """ เข้ารหัสข้อความด้วย AES-256 CBC """
+IndentationError: unexpected indent
+>>>         iv = get_random_bytes(16)  # สุ่ม IV ขนาด 16 bytes
+  File "<python-input-9>", line 1
+    iv = get_random_bytes(16)  # สุ่ม IV ขนาด 16 bytes
+IndentationError: unexpected indent
+>>>         cipher = AES.new(self.key, AES.MODE_CBC, iv)
+  File "<python-input-10>", line 1
+    cipher = AES.new(self.key, AES.MODE_CBC, iv)
+IndentationError: unexpected indent
+>>>         ciphertext = cipher.encrypt(pad(plaintext.encode(), AES.block_size))
+  File "<python-input-11>", line 1
+    ciphertext = cipher.encrypt(pad(plaintext.encode(), AES.block_size))
+IndentationError: unexpected indent
+>>>         return base64.b64encode(iv + ciphertext).decode()  # ส่งคืนค่าแบบ Base64
+  File "<python-input-12>", line 1
+    return base64.b64encode(iv + ciphertext).decode()  # ส่งคืนค่าแบบ Base64
+IndentationError: unexpected indent
+>>>
+>>>     def decrypt(self, encrypted_text: str) -> str:
+  File "<python-input-14>", line 1
+    def decrypt(self, encrypted_text: str) -> str:
+IndentationError: unexpected indent
+>>>         """ ถอดรหัสข้อความที่ถูกเข้ารหัส """
+  File "<python-input-15>", line 1
+    """ ถอดรหัสข้อความที่ถูกเข้ารหัส """
+IndentationError: unexpected indent
+>>>         encrypted_bytes = base64.b64decode(encrypted_text)
+  File "<python-input-16>", line 1
+    encrypted_bytes = base64.b64decode(encrypted_text)
+IndentationError: unexpected indent
+>>>         iv = encrypted_bytes[:16]  # แยกค่า IV ออกจากข้อมูลที่เข้ารหัส
+  File "<python-input-17>", line 1
+    iv = encrypted_bytes[:16]  # แยกค่า IV ออกจากข้อมูลที่เข้ารหัส
+IndentationError: unexpected indent
+>>>         ciphertext = encrypted_bytes[16:]
+  File "<python-input-18>", line 1
+    ciphertext = encrypted_bytes[16:]
+IndentationError: unexpected indent
+>>>         cipher = AES.new(self.key, AES.MODE_CBC, iv)
+  File "<python-input-19>", line 1
+    cipher = AES.new(self.key, AES.MODE_CBC, iv)
+IndentationError: unexpected indent
+>>>         return unpad(cipher.decrypt(ciphertext), AES.block_size).decode()
+  File "<python-input-20>", line 1
+    return unpad(cipher.decrypt(ciphertext), AES.block_size).decode()
+IndentationError: unexpected indent
+>>>
+>>> # \ud83d\udd11 สร้างคีย์ 256-bit (ควรเก็บไว้ในที่ปลอดภัย)
+UnicodeEncodeError: 'utf-8' codec can't encode characters in position 2-3: surrogates not allowed
+>>> key = get_random_bytes(32)
+Traceback (most recent call last):
+  File "<python-input-23>", line 1, in <module>
+    key = get_random_bytes(32)
+          ^^^^^^^^^^^^^^^^
+NameError: name 'get_random_bytes' is not defined
+>>>
+>>> # \ud83d\udd12 ตัวอย่างการเข้ารหัสและถอดรหัสข้อมูล IoT
+UnicodeEncodeError: 'utf-8' codec can't encode characters in position 2-3: surrogates not allowed
+>>> encryptor = AES256Encryptor(key)
+Traceback (most recent call last):
+  File "<python-input-26>", line 1, in <module>
+    encryptor = AES256Encryptor(key)
+                ^^^^^^^^^^^^^^^
+NameError: name 'AES256Encryptor' is not defined
+>>>
+>>> iot_data = "Sensor: Temp=28.5C, Humidity=65%"
+>>> encrypted_data = encryptor.encrypt(iot_data)
+Traceback (most recent call last):
+  File "<python-input-29>", line 1, in <module>
+    encrypted_data = encryptor.encrypt(iot_data)
+                     ^^^^^^^^^
+NameError: name 'encryptor' is not defined
+>>> decrypted_data = encryptor.decrypt(encrypted_data)
+Traceback (most recent call last):
+  File "<python-input-30>", line 1, in <module>
+    decrypted_data = encryptor.decrypt(encrypted_data)
+                     ^^^^^^^^^
+NameError: name 'encryptor' is not defined
+>>>
+>>> print("\ud83d\udce1 ข้อมูล IoT:", iot_data)
+UnicodeEncodeError: 'utf-8' codec can't encode characters in position 7-8: surrogates not allowed
+>>> print("\ud83d\udd10 ข้อมูลที่เข้ารหัส:", encrypted_data)
+UnicodeEncodeError: 'utf-8' codec can't encode characters in position 7-8: surrogates not allowed
+>>> print("\ud83d\udd13 ข้อมูลที่ถอดรหัส:", decrypted_data)
+UnicodeEncodeError: 'utf-8' codec can't encode characters in position 7-8: surrogates not allowed
+>>>
+>>>
