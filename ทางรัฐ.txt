@@ -1,0 +1,32 @@
+Python 3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import os
+>>>
+>>> class Config:
+...         SECRET_KEY = os.environ.get('SECRET_KEY', 'your-default-secret-key')
+...             DEBUG = False
+...                 TESTING = False
+...                     SQLALCHEMY_TRACK_MODIFICATIONS = False
+...
+  File "<python-input-2>", line 3
+    DEBUG = False
+IndentationError: unexpected indent
+>>> class DevelopmentConfig(Config):
+...             DEBUG = True
+...                 SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL', 'sqlite:///dev.db')
+...
+  File "<python-input-3>", line 3
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL', 'sqlite:///dev.db')
+IndentationError: unexpected indent
+>>> class ProductionConfig(Config):
+...                 SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', 'sqlite:///prod.db')
+...
+Traceback (most recent call last):
+  File "<python-input-4>", line 1, in <module>
+    class ProductionConfig(Config):
+                           ^^^^^^
+NameError: name 'Config' is not defined
+>>> class TestingConfig(Config):
+...                     TESTING = True
+...                         SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URL', 'sqlite:///test.db')
+...
